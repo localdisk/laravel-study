@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-
-<livewire:amazon />
+test
 @endsection
