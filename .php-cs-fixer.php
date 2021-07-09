@@ -1,20 +1,30 @@
 <?php declare(strict_types=1);
 
-$finder = PhpCsFixer\Finder::create()
-    ->in([
-        __DIR__ . '/app',
-        __DIR__ . '/config',
-        __DIR__ . '/database/factories',
-        __DIR__ . '/database/seeders',
-        __DIR__ . '/routes',
-        __DIR__ . '/tests',
-    ]);
+// $finder = PhpCsFixer\Finder::create()
+    // ->in([
+    //     __DIR__ . '/app',
+    //     __DIR__ . '/config',
+    //     __DIR__ . '/database/factories',
+    //     __DIR__ . '/database/seeders',
+    //     __DIR__ . '/routes',
+    //     __DIR__ . '/tests',
+    // ]);
+    // ->in([
+    //     '/config',
+    //     '/app',
+    //     '/database/factories',
+    //     '/database/seeders',
+
+    //     '/routes',
+    //     '/tests',
+    // ]);
 
 $config = new PhpCsFixer\Config();
 
 return $config
     ->setRiskyAllowed(true)
-    ->setRules([
+    ->setRules(
+        [
         '@PhpCsFixer:risky' => true,
         'blank_line_after_opening_tag' => false,
         'linebreak_after_opening_tag' => false,
@@ -22,6 +32,7 @@ return $config
         'phpdoc_types_order' => [
             'null_adjustment' => 'always_last',
             'sort_algorithm' => 'none',
+
         ],
         'no_superfluous_phpdoc_tags' => false,
         'global_namespace_import' => [
@@ -36,5 +47,7 @@ return $config
             'align' => 'left',
         ],
         'not_operator_with_successor_space' => true,
-    ])
-    ->setFinder($finder);
+        'array_syntax' => ['syntax' => 'short'],
+    ]
+    );
+    // ->setFinder($finder);
